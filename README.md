@@ -12,15 +12,21 @@ My approach is to divide the data into smaller chuncks each identified by a uniq
 # TOOLS
 
 **Backend**
+
 Node.js Server using Express.js
+
 Socket.io to establish Socket Connections
+
 QueueJS to implement Queue Data Structure 
 
-**Frontend** [Very Primitive at this point.Watch Console to see events]
+**Frontend** 
+
+[Very Primitive at this point.Watch Console to see events]
+
 Basic HTML and Javascript
 
 
-Components 
+# Components 
 
 1. Data Emmiting Server : 
 This server is a continuous supply of Data on which computation 
