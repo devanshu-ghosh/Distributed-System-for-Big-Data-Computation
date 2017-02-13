@@ -1,7 +1,24 @@
 # Distributed-System-for-Big-Data-Computation
 
+# AIM 
 
-Distributed System to Perform Calculation on Big Data 
+We have a Data Emmiting Server which has a lot of data stored . We want to perform some computations
+on that data . 
+
+# APPROACH 
+
+My approach is to divide the data into smaller chuncks each identified by a unique ID and perform computaions not at the server but at the PEERS/CLIENTS who have connected to the Server via SOCKET connection . 
+
+# TOOLS
+
+**Backend**
+Node.js Server using Express.js
+Socket.io to establish Socket Connections
+QueueJS to implement Queue Data Structure 
+
+**Frontend** [Very Primitive at this point.Watch Console to see events]
+Basic HTML and Javascript
+
 
 Components 
 
