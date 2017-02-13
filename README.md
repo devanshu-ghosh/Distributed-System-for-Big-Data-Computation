@@ -21,7 +21,6 @@ data.data : Array storing the data
 3. Data Sent Map : 
 This Map stores the Data Sent . We maintain this to ensure that all data 
 gets computed without fail . If a client doesnt returns the answer , we should reenqueue the data . 
-
 This has not been implemeted at this point . 
 
 4. ANS : 
