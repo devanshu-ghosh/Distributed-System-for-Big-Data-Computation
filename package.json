@@ -1,11 +1,9 @@
 {
-  "name": "socket.io-chat",
+  "name": "DSFBDC",
   "version": "0.0.0",
-  "description": "A simple chat client using socket.io",
+  "description": "Perform Computations on Big Data using Socket.io",
   "main": "index.js",
-  "author": "Grant Timmerman",
-  "private": true,
-  "license": "BSD",
+  "author": "Devanshu",
   "dependencies": {
     "express": "4.13.4",
     "socket.io": "~1.7.2",
