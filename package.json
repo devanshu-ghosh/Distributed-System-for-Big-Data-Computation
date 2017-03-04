@@ -8,7 +8,8 @@
     "express": "4.13.4",
     "socket.io": "~1.7.2",
     "nodemon": "~1.11.0",
-    "queuejs": "~0.1.0"
+    "queuejs": "~0.1.0",
+    "serve-favicon": "~2.4.1"
   },
   "scripts": {
     "start": "node index.js"

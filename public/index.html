@@ -1,16 +1,12 @@
-<!doctype html>
-<html lang="en">
+<html ng-app="dataCompute">
 <head>
   <meta charset="UTF-8">
   <title>Distributed System via Socket</title>
-</head>
-<body>
-  <textarea id="container" style="overflow-y:scroll;height:400px;width:500px;"></textarea>
-  <input type="button" onclick="getData()" value="GET DATA">
-  <input type="button" onclick="disconnectUser()" value="disconnect">
-
-  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0/angular.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
-  <script src="/main.js"></script>
+  <script src="main.js"></script>
+</head>
+<body ng-controller="DataComputeController">
+  <p ng-repeat="x in display track by $index">{{x}}</p>
 </body>
 </html>

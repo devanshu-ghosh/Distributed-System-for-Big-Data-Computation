@@ -6,6 +6,8 @@ var io = require('socket.io')(server);
 var port = process.env.PORT || 3000;
 var Queue = require('queuejs');
 var crypto = require("crypto"); 
+var favicon = require("serve-favicon");
+var path = require("path");
 var WQ = new Queue();
 var ANS = {};//stores answer mappings. In futute we may implement a DB function here
 var DSM = {};//stores the mappings of data sent . If ACK , then remove from object else enqueue in WQ 
@@ -45,6 +47,8 @@ function checkForNACK(){
     }
   }
 }
+
+app.use(favicon(path.join(__dirname,'favicon.ico')));
 server.listen(port, function () {
   console.log('Server listening at port %d', port);
 });
