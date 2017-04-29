@@ -7,6 +7,6 @@
   <script src="main.js"></script>
 </head>
 <body ng-controller="DataComputeController">
-  <p ng-repeat="x in display track by $index">{{x}}</p>
+  <p ng-repeat="x in display | limitTo:-10 track by $index">{{x}}</p>
 </body>
 </html>

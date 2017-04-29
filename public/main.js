@@ -19,6 +19,8 @@ app.controller('DataComputeController', function DataComputeController($scope,$i
 	$scope.getData = function(){
 		socket.emit('getData');
 		$scope.display.push("GET DATA");
+		if($scope.display.length > 50)
+			$scope.display.shift();
 		$scope.$apply();
 	};
 	$scope.performComputations = function(num){
@@ -33,10 +35,14 @@ app.controller('DataComputeController', function DataComputeController($scope,$i
 		resultData.result = $scope.performComputations(data.data);
 		$scope.display.push("RESULT CALCULATED AND SENT FOR ID : "+data.id);
 		socket.emit('result',resultData);
+		if($scope.display.length > 50)
+			$scope.display.shift();
 		$scope.$apply();
 	});
 	socket.on('Data Queue Empty',function(){
 		$scope.display.push("NO DATA . WAIT");
+		if($scope.display.length > 50)
+			$scope.display.shift();
 		$scope.$apply();
 	});
 

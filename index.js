@@ -8,27 +8,22 @@ var Queue = require('queuejs');
 var crypto = require("crypto"); 
 var favicon = require("serve-favicon");
 var path = require("path");
+var generateData = require(path.join(__dirname,'generatePayload'));
 var WQ = new Queue();
 var ANS = {};//stores answer mappings. In futute we may implement a DB function here
 var DSM = {};//stores the mappings of data sent . If ACK , then remove from object else enqueue in WQ 
-
+var addDataCoefficient = 10;//to be changed with request amount
 var dataAddid = setInterval(addDataToWQ,5000);
 //var NACKid = setInterval(checkForNACK,10000);
 
 function addDataToWQ(){
     console.log('Adding Data');
-    for(var j=0;j<5;j++){
-        var data = {};
-        data.id = crypto.randomBytes(16).toString("hex");
-        data.data = [];
-        for(var i=0;i<10;i++){
-            data.data.push(Number(Math.random()*10000000));
-        }
-        WQ.enq(data);
-    }
-      
-    DSM[data.id]={'num':data.data,'timestamp':new Date()};
-    ANS[data.id]=0;
+    for(var j=0;j<addDataCoefficient;j++){
+        var payload = generateData(1);
+        WQ.enq(payload);
+    }    
+    DSM[payload.id]={'data':payload.data,'timestamp':new Date()};
+    ANS[payload.id]=0;
 }
 function checkForNACK(){
     console.log('checking for NACK');
@@ -66,8 +61,8 @@ io.on('connection', function (socket) {
     }
     else{
       var data = WQ.deq(); 
-      console.log('data sent');
       socket.emit('takeData',data);
+      console.log('data sent');
     }
     
   });
