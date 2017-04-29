@@ -21,10 +21,16 @@ QueueJS to implement Queue Data Structure
 
 **Frontend** 
 
-[Very Primitive at this point.Watch Console to see events]
+Angular Frontend 
 
-Basic HTML and Javascript
+Very primitive
 
+
+# TO DO
+
+1. Implement Global in memory data-result store
+2. Implement FunctionSignature Concept : 
+Each computation is characterized by its corresponding function . Like ArraySum,FrequencyOfWords etc . Our system hence will ask the socket connection to choose one of the type of computation it wants to perform . Once selected , we will pass this choice to generateData function as well as to the Client . Hence we have made the system independent of a particular task . New computation type adding is just a function away . 
 
 # Components 
 
